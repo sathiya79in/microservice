@@ -32,8 +32,14 @@ public class CompanyController {
 
     
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public Optional<Company> find(@ApiPathParam(name = "id") @PathVariable long id){
-        return null;//companyDao.findById(id);
+    public Company find(@ApiPathParam(name = "id") @PathVariable long id){
+    	Company company=null;
+    	try{
+    		company=companyDao.findById(id);
+    	}catch(Exception ex){
+    		
+    	}
+        return company;
     }
     
     @RequestMapping(value = "/all", method = RequestMethod.GET)
