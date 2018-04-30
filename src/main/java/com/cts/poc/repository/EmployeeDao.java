@@ -22,8 +22,9 @@ public class EmployeeDao extends BaseDAO{
 			Query query = session.createQuery("FROM Employee");
 			employeeList= query.list();
 			
-		}catch(HibernateException hibernateExcep){
-			throw hibernateExcep;
+		}catch(Exception e){
+			System.out.println("EmployeeDAo Exception"+e);
+			throw e;
 		}finally{
 			session.close();
 		}
@@ -35,15 +36,16 @@ public class EmployeeDao extends BaseDAO{
 		Session session = getSession();		
 		try{
 			
-			Query query = session.createQuery("FROM Employee E where E.ID =?");
+			Query query = session.createQuery("FROM Employee E where E.id =?");
 			query.setParameter(0,id);
 			
 			List list= query.list();
 			if(list!=null && list.get(0) != null){
 				employee = (Employee)list.get(0);
 			}
-		}catch(HibernateException hibernateExcep){
-			throw hibernateExcep;
+		}catch(Exception e){
+			System.out.println("EmployeeDAo Exception"+e);
+			throw e;
 		}finally{
 			session.close();
 		}
@@ -60,6 +62,7 @@ public class EmployeeDao extends BaseDAO{
 			session.flush();
 			employee = (Employee) session.load(Employee.class, id);
 		}catch(Exception exception){
+			System.out.println("EmployeeDAo Exception"+exception);
 			throw exception;
 		}finally{
 			session.close();
@@ -77,6 +80,7 @@ public class EmployeeDao extends BaseDAO{
 			session.flush();
 			employee = (Employee) session.load(Employee.class, employee.getId());
 		}catch(Exception exception){
+			System.out.println("EmployeeDAo Exception"+exception);
 			throw exception;
 		}finally{
 			session.close();
