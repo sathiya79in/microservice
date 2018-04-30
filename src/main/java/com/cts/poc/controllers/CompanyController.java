@@ -57,17 +57,27 @@ public class CompanyController {
     @RequestMapping(method = RequestMethod.POST)
     @ApiMethod(description = "Create a company and save it to the database")
     public List<Company> create(@RequestBody Company company){
-    	
-    	//companyDao.save(company);
-    	return null;//companyDao.findAll();
+    	List list = new ArrayList();
+    	try{
+    		company=companyDao.save(company);
+    		list.add(company);
+    	}catch(Exception e){
+    		
+    	}
+    	return list;
     }
 
     @RequestMapping(method = RequestMethod.PUT)
     @ApiMethod(description = "update a company and save it to the database")
     public List<Company> update(@RequestBody Company company){
-    	
-    	//companyDao.save(company);
-    	return null;//companyDao.findAll();
+    	List list = new ArrayList();
+    	try{
+    		company=companyDao.update(company);
+    		list.add(company);
+    	}catch(Exception e){
+    		
+    	}
+    	return list;
     }
 
     

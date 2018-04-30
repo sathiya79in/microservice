@@ -7,81 +7,81 @@ import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
 
-import com.cts.poc.model.Company;
+import com.cts.poc.model.Employee;
 
 @Component
-public class CompanyDao extends BaseDAO{
+public class EmployeeDao extends BaseDAO{
 	
 	
 	
-	public List<Company> getAllCompanies() throws Exception {
-		List<Company> companyList = null;
+	public List<Employee> getAllEmployees() throws Exception {
+		List<Employee> employeeList = null;
 		Session session = getSession();		
 		try{
 			
-			Query query = session.createQuery("FROM Company");
-			companyList= query.list();
+			Query query = session.createQuery("FROM Employee");
+			employeeList= query.list();
 			
 		}catch(HibernateException hibernateExcep){
 			throw hibernateExcep;
 		}finally{
 			session.close();
 		}
-		return companyList;
+		return employeeList;
 	}
 	
-	public Company findById(long id) throws Exception {
-		Company company = null;
+	public Employee findById(long id) throws Exception {
+		Employee employee = null;
 		Session session = getSession();		
 		try{
 			
-			Query query = session.createQuery("FROM Company C where C.ID =?");
+			Query query = session.createQuery("FROM Employee E where E.ID =?");
 			query.setParameter(0,id);
 			
 			List list= query.list();
 			if(list!=null && list.get(0) != null){
-				company = (Company)list.get(0);
+				employee = (Employee)list.get(0);
 			}
 		}catch(HibernateException hibernateExcep){
 			throw hibernateExcep;
 		}finally{
 			session.close();
 		}
-		return company;
+		return employee;
 	}
 	
-	public Company save(Company company) throws Exception {
+	public Employee save(Employee employee) throws Exception {
 		// TODO Auto-generated method stub
 		
 		Session session = getSession();
 		
 		try{
-			long id = (long) session.save(company);
+			long id = (long) session.save(employee);
 			session.flush();
-			company = (Company) session.load(Company.class, id);
+			employee = (Employee) session.load(Employee.class, id);
 		}catch(Exception exception){
 			throw exception;
 		}finally{
 			session.close();
 		}
 		
-		return company;
+		return employee;
 	}
 	
-	public Company update(Company company) throws Exception {
+	public Employee update(Employee employee) throws Exception {
 		// TODO Auto-generated method stub
 		
 		Session session = getSession();
 		try{
-			session.saveOrUpdate(company);
+			session.saveOrUpdate(employee);
 			session.flush();
-			company = (Company) session.load(Company.class, company.getCompanyId());
+			employee = (Employee) session.load(Employee.class, employee.getId());
 		}catch(Exception exception){
 			throw exception;
 		}finally{
 			session.close();
 		}
 		
-		return company;
+		return employee;
 	}
 }
