@@ -36,7 +36,7 @@ public class CompanyDao extends BaseDAO{
 		Session session = getSession();		
 		try{
 			
-			Query query = session.createQuery("FROM Company C where C.ID =?");
+			Query query = session.createQuery("FROM Company C where C.companyId =?");
 			query.setParameter(0,id);
 			
 			List list= query.list();
