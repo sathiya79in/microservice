@@ -60,7 +60,7 @@ public class CompanyController {
     public List<Company> create(@RequestBody Company company){
     	List list = new ArrayList();
     	try{
-    		System.out.println("Company Save --> "+company);
+    		System.out.println("Company Save --> "+company.getName()+"--"+company.getSymbol());
     		company=companyDao.save(company);
     		list.add(company);
     	}catch(Exception e){
