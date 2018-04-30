@@ -22,8 +22,9 @@ public class CompanyDao extends BaseDAO{
 			Query query = session.createQuery("FROM Company");
 			companyList= query.list();
 			
-		}catch(HibernateException hibernateExcep){
-			throw hibernateExcep;
+		}catch(Exception Excep){
+			System.out.println("CompanyDAO Exception "+Excep);
+			throw Excep;
 		}finally{
 			session.close();
 		}
@@ -42,8 +43,9 @@ public class CompanyDao extends BaseDAO{
 			if(list!=null && list.get(0) != null){
 				company = (Company)list.get(0);
 			}
-		}catch(HibernateException hibernateExcep){
-			throw hibernateExcep;
+		}catch(Exception Excep){
+			System.out.println("CompanyDAO Exception "+Excep);
+			throw Excep;
 		}finally{
 			session.close();
 		}
@@ -60,6 +62,7 @@ public class CompanyDao extends BaseDAO{
 			session.flush();
 			company = (Company) session.load(Company.class, id);
 		}catch(Exception exception){
+			System.out.println("CompanyDAO Exception "+exception);
 			throw exception;
 		}finally{
 			session.close();
@@ -77,6 +80,7 @@ public class CompanyDao extends BaseDAO{
 			session.flush();
 			company = (Company) session.load(Company.class, company.getCompanyId());
 		}catch(Exception exception){
+			System.out.println("CompanyDAO Exception "+exception);
 			throw exception;
 		}finally{
 			session.close();

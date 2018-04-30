@@ -35,6 +35,7 @@ public class CompanyController {
     public Company find(@ApiPathParam(name = "id") @PathVariable long id){
     	Company company=null;
     	try{
+    		System.out.println("Company findById --> "+id);
     		company=companyDao.findById(id);
     	}catch(Exception ex){
     		
@@ -59,6 +60,7 @@ public class CompanyController {
     public List<Company> create(@RequestBody Company company){
     	List list = new ArrayList();
     	try{
+    		System.out.println("Company Save --> "+company);
     		company=companyDao.save(company);
     		list.add(company);
     	}catch(Exception e){
@@ -72,6 +74,7 @@ public class CompanyController {
     public List<Company> update(@RequestBody Company company){
     	List list = new ArrayList();
     	try{
+    		System.out.println("Company Update --> "+company);
     		company=companyDao.update(company);
     		list.add(company);
     	}catch(Exception e){
