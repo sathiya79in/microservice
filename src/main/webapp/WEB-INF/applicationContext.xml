@@ -36,6 +36,7 @@
 		<property name="annotatedClasses">
 			<list>
 				<value>com.cts.poc.model.Company</value>
+				<value>com.cts.poc.model.Employee</value>
 			</list>
 		</property>
 		<property name="hibernateProperties">
