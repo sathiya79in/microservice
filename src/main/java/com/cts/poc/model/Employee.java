@@ -29,7 +29,7 @@ public class Employee {
 	    private String lastName;
 
 	    @ManyToOne(cascade = CascadeType.ALL)
-	    @JoinColumn(name="ID", nullable = true)    
+	    @JoinColumn(name="ID", nullable = false)    
 	    private Company company;
 
 	    
