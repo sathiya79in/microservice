@@ -36,10 +36,10 @@ public class Award {
 	   @Column(name="PRICE")
 	   private double price;
 	   
-	  
+	 
 	   @Column(name="PLAN_ID")
 	   private long planId;
-	   
+	  
 	   @ManyToOne
 	   @JoinColumn(name="PLAN_ID", insertable=false, updatable = false)
 	   private Plan plan;
@@ -55,11 +55,11 @@ public class Award {
 	   @JoinColumn(name="TEMPLATE_ID", insertable=false, updatable = false)
 	   private VestTemplate vestTemplate;
 	   
-	   @Column(name="EMPLOYEE_ID")
+	   @Column(name="EMP_ID")
 	   private long employeeId;
 
 	   @ManyToOne
-	   @JoinColumn(name="EMPLOYEE_ID",insertable=false, updatable = false)
+	   @JoinColumn(name="EMP_ID",insertable=false, updatable = false)
 	   private Employee employee;
 	   
 	   
