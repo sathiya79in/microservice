@@ -10,6 +10,8 @@ import com.cts.poc.model.Company;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.CascadeType;
+import javax.persistence.Table;
+
 
 @Entity
 @Table( name = "employee")
