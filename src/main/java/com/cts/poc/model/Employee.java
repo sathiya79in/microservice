@@ -12,6 +12,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.CascadeType;
 
 @Entity
+@Table( name = "employee")
 public class Employee {
 
 	    @Id
