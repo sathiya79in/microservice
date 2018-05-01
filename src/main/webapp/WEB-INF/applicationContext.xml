@@ -37,6 +37,9 @@
 			<list>
 				<value>com.cts.poc.model.Company</value>
 				<value>com.cts.poc.model.Employee</value>
+				<value>com.cts.poc.model.Plan</value>
+				<value>com.cts.poc.model.VestTemplate</value>
+				<value>com.cts.poc.model.Award</value>
 			</list>
 		</property>
 		<property name="hibernateProperties">
