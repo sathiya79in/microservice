@@ -104,7 +104,7 @@ app.controller('PocController', function($scope, $http,$q) {
 			'method' : 'POST',
 			'url' :'/microservice/award',
 			'data' : {
-				'employeeId': $scope.name,
+				'employeeId': $scope.employeeId,
 				'planId': $scope.planId,
 				'templateId': $scope.templateId,
 				'number':$scope.number,
