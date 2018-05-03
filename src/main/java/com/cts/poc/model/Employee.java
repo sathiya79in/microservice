@@ -32,6 +32,9 @@ public class Employee {
 	    @JoinColumn(name="ID", nullable = false)    
 	    private Company company;
 
+	    @Column(name="ID")
+		private long companyId;
+
 	    
 	    protected Employee(){}
 
@@ -79,4 +82,11 @@ public class Employee {
 			this.company = company;
 		}
 	
+		public void setCompanyId(long companyId) {
+			this.companyId= companyId;
+		}
+
+		 public long getCompanyId() {
+		        return companyId;
+		    }
 }

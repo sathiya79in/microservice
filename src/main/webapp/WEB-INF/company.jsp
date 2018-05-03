@@ -7,7 +7,7 @@
 
 <form>
 <div class="row">
-<div class="col-sm-8 offset-sm-2" style="border:1px solid #ced4da;">
+<div class="col-sm-8 offset-sm-2">
 <div class="form-group row">
     <div class="col-sm-4 offset-sm-4" style="text-align:center;"><label><h2>Company</h2></label>
     </div>

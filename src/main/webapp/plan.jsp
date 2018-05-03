@@ -7,25 +7,36 @@
 
 <form>
 <div class="row">
-<div class="col-sm-8 offset-sm-2" style="border:1px solid #ced4da;">
+<div class="col-sm-8 offset-sm-2"  style="border:1px solid #ced4da;">
 <div class="form-group row">
-    <div class="col-sm-4 offset-sm-4" style="text-align:center;"><label><h2>Company</h2></label>
+    <div class="col-sm-4 offset-sm-4" style="text-align:center;"><label><h2>Equity Plan</h2></label>
     </div>
   </div>
   <div class="form-group row">
-    <label for="name" class="col-sm-2 col-form-label">Company Name</label>
+    <label for="name" class="col-sm-2 col-form-label">Plan Name</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" id="name" placeholder="Company Name" ng-model="name">
+      <input type="text" class="form-control" id="name" placeholder="Plan Name" ng-model="name">
     </div>
   </div>
   <div class="form-group row">
-    <label for="symbol" class="col-sm-2 col-form-label">Symbol</label>
+    <label for="beginDate" class="col-sm-2 col-form-label">Begin Date</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" id="symbol" placeholder="Symbol" ng-model="symbol">
+      <input type="text" class="form-control" id="beginDate" placeholder="Begin Date" ng-model="beginDate">
     </div>
   </div>
-  
   <div class="form-group row">
+    <label for="expirationDate" class="col-sm-2 col-form-label">Expiration Date</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="expirationDate" placeholder="Expiration Date" ng-model="expirationDate">
+    </div>
+  </div>
+    <div class="form-group row">
+    <label for="allocatedShares" class="col-sm-2 col-form-label">Allocate Shares</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="allocatedShares" placeholder="Allocate Shares" ng-model="allocatedShares">
+    </div>
+  </div>
+    <div class="form-group row">
     <div class="col-sm-2 offset-sm-5" style="text-align:center;">
   		<button type="button" class="btn btn-primary" ng-click="save()">Save</button>
     </div>
@@ -51,10 +62,12 @@ app.controller('PocController', function($scope, $http) {
 	$scope.save=function(){
 		var req = {
 			'method' : 'POST',
-			'url' :'/microservice/company',
+			'url' :'/microservice/plan',
 			'data' : {
 				'name': $scope.name,
-				'symbol': $scope.symbol
+				'beginDate': $scope.beginDate,
+				'expirationDate':$scope.expirationDate,
+				'allocatedShares': $scope.allocatedShares
 			}
 		};
 		
