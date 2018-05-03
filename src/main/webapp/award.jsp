@@ -49,11 +49,13 @@
     <label for="date" class="col-sm-2 col-form-label">Award Date</label>
     <div class="col-sm-10">
       <input type="text" class="form-control" id="date" placeholder="Award Date" ng-model="date">
+       <span class="input-group-addon">yyyy-mm-dd</span>
     </div>
   </div>
   <div class="form-group row">
     <label for="marketValue" class="col-sm-2 col-form-label">Market Value</label>
     <div class="col-sm-10">
+      <span class="input-group-addon">$</span>
       <input type="text" class="form-control" id="marketValue" placeholder="Market Value" ng-model="marketValue">
     </div>
   </div>
@@ -66,6 +68,7 @@
   <div class="form-group row">
     <label for="price" class="col-sm-2 col-form-label">Price</label>
     <div class="col-sm-10">
+    <span class="input-group-addon">$</span>
       <input type="text" class="form-control" id="price" placeholder="Price" ng-model="price">
     </div>
   </div>
@@ -102,7 +105,7 @@ app.controller('PocController', function($scope, $http,$q) {
 			'url' :'/microservice/award',
 			'data' : {
 				'employeeId': $scope.name,
-				'planId': $scope.symbol,
+				'planId': $scope.planId,
 				'templateId': $scope.templateId,
 				'number':$scope.number,
 				'date': $scope.date,
