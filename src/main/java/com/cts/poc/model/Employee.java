@@ -28,13 +28,12 @@ public class Employee {
 	    @Column(name="LAST_NAME")
 	    private String lastName;
 
-	    @ManyToOne(cascade = CascadeType.ALL)
-	    @JoinColumn(name="ID", nullable = false)    
+	    @ManyToOne
+	    @JoinColumn(name="ID",  insertable=false, updatable = false)    
 	    private Company company;
 
 	    @Column(name="ID")
 		private long companyId;
-
 	    
 	    protected Employee(){}
 
