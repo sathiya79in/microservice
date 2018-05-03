@@ -106,7 +106,7 @@ app.controller('PocController', function($scope, $http,$q) {
 				'templateId': $scope.templateId,
 				'number':$scope.number,
 				'date': $scope.date,
-				'marketValue':'$scope.marketValue,
+				'marketValue':$scope.marketValue,
 				'price':$scope.price,
 				'shares':$scope.shares		
 			}
