@@ -31,9 +31,9 @@
     </div>
   </div>
     <div class="form-group row">
-    <label for="allocatedShares" class="col-sm-2 col-form-label">Allocate Shares</label>
+    <label for="allocatedShares" class="col-sm-2 col-form-label">Allocated Shares</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" id="allocatedShares" placeholder="Allocate Shares" ng-model="allocatedShares">
+      <input type="text" class="form-control" id="allocatedShares" placeholder="Allocated Shares" ng-model="allocatedShares">
     </div>
   </div>
     <div class="form-group row">
