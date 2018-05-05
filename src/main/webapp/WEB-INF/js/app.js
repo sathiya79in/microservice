@@ -200,7 +200,7 @@ angular.module('Poc').controller('ViewController', function($scope, $http) {
 		var result ={
 			'result' : response.data
 		};
-			$scope.jsonData=JSON.parse(result);
+			$scope.jsonData=result;
     	});
 	};
 	
