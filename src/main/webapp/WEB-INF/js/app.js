@@ -197,10 +197,7 @@ angular.module('Poc').controller('ViewController', function($scope, $http) {
 		};
 		$scope.selectedDomain=domain;
 		$http(req).then(function(response) {
-		var result ={
-			'result' : response.data
-		};
-			$scope.jsonData=result;
+			$scope.jsonData=response.data;
     	});
 	};
 	
