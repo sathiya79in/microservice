@@ -168,7 +168,7 @@ angular.module('Poc').controller('TemplateController', function($scope, $http) {
 	$scope.save=function(){
 		var req = {
 			'method' : 'POST',
-			'url' :'/microservice/template',
+			'url' :'/microservice/vesttemplate',
 			'data' : {
 				'name': $scope.name,
 				'months': $scope.months,
@@ -189,6 +189,8 @@ angular.module('Poc').controller('ViewController', function($scope, $http) {
 	
 	$scope.selectedDomain ='';
 	
+	$scope.jsonData=[{'a':'b'},{'a':'b'}];
+	
 	$scope.switch=function(domain){
 		var req = {
 			'method' : 'GET',
@@ -196,7 +198,7 @@ angular.module('Poc').controller('ViewController', function($scope, $http) {
 		};
 		$scope.selectedDomain=domain;
 		$http(req).then(function(response) {
-			$scope.jsonData=response.data;
+			$scope.jsonData=angular.toJson(response.data);
     	});
 	};
 	
