@@ -189,7 +189,6 @@ angular.module('Poc').controller('ViewController', function($scope, $http) {
 	
 	$scope.selectedDomain ='';
 	
-	$scope.jsonData=[{'a':'b'},{'a':'b'}];
 	
 	$scope.switch=function(domain){
 		var req = {
@@ -198,7 +197,7 @@ angular.module('Poc').controller('ViewController', function($scope, $http) {
 		};
 		$scope.selectedDomain=domain;
 		$http(req).then(function(response) {
-			$scope.jsonData=angular.toJson(response.data);
+			$scope.jsonData=JSON.parse(response.data);
     	});
 	};
 	
