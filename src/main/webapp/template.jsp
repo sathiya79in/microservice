@@ -64,7 +64,7 @@ app.controller('PocController', function($scope, $http) {
 			'method' : 'POST',
 			'url' :'/microservice/template',
 			'data' : {
-				'name': $scope.name,
+				'templateName': $scope.templateName,
 				'months': $scope.months,
 				'percent':$scope.percent,
 				'vestType': $scope.vestType
