@@ -15,7 +15,7 @@
   <div class="form-group row">
     <label for="companyId" class="col-sm-2 col-form-label">Company</label>
     <div class="col-sm-10">
-      <select ng-model="companyId" id="companyId">
+      <select ng-model="companyId" id="companyId"  class="form-control">
       	<option value="">Select the Company</option>
       	<option ng-repeat="c in company" value={{c.companyId}}>{{c.name}}</option>
       </select>
